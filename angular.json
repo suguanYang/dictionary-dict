@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "valorant": {
+    "dict": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/valorant",
+            "outputPath": "dist/dict",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "./node_modules/normalize.css/normalize.css"
             ],
             "scripts": []
           },
@@ -66,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "valorant:build"
+            "browserTarget": "dict:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "valorant:build:production"
+              "browserTarget": "dict:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "valorant:build"
+            "browserTarget": "dict:build"
           }
         },
         "test": {
@@ -114,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "valorant:serve"
+            "devServerTarget": "dict:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "valorant:serve:production"
+              "devServerTarget": "dict:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "valorant"
+  "defaultProject": "dict"
 }
